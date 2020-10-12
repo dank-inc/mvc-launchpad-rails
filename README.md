@@ -4,10 +4,24 @@
 
 boilerplate project for MVPs using MVC
 
+# How To Use
+
+- Fork dis!
+- create database schema in `backend/schema.yml` (make sure you follow the guidelines in the file, check your spleling, I'm not gonna baby you if you make mistakes)
+
+- run `docker-compose run --rm backend bash`
+- run (in container) `rails app:scaffold:all`
+- run (in container) `rails db:create`
+- run (in container) `rails db:migrate`
+
+# Stack Details
+
 ## Backend
 
 - postgresql
 - rails
+  - JWT
+  - bcrypt
 - actioncable
 
 ## Frontend
