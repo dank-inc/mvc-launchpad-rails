@@ -22,6 +22,8 @@ boilerplate project for MVPs using MVC
 
 - postgresql
 - rails
+  - api only
+  - jbuilder
   - JWT
   - bcrypt
 - actioncable
@@ -29,9 +31,9 @@ boilerplate project for MVPs using MVC
 ## Frontend
 
 - React
-- Typescript
-- ActionCable library (from dank-inc)
-- useGet library (from dank-inc)
+  - Typescript
+  - ActionCable library (from dank-inc)
+  - useGet library (from dank-inc)
 
 ## Devops
 
