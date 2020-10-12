@@ -7,11 +7,11 @@ boilerplate project for MVPs using MVC
 # How To Use
 
 - Fork dis!
-- create database schema in `backend/schema.yml` (make sure you follow the guidelines in the file, check your spleling, I'm not gonna baby you if you make mistakes)
+- (optional) edit `backend/scaffold-my-data.sh`
 - add your dev data to `backend/db/seeds.rb`
 
 - run `docker-compose run --rm backend bash`
-- run (in container) `rails app:scaffold`
+- run (in container) `./scaffold-my-data`
 - run (in container) `rails db:create`
 - run (in container) `rails db:migrate`
 - run (in container) `rails db:seed`
