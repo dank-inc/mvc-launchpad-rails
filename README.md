@@ -51,6 +51,6 @@ NOTE: frontend hot reloading is a pain in the ass in docker so it works _sometim
   - ActionCable library (from dank-inc)
   - useGet library (from dank-inc)
 
-## Devops
+## Misc
 
 - nginx
