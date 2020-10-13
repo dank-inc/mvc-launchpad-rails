@@ -1,13 +1,13 @@
 default: &default
   adapter: postgresql
-  username: postgres
-  host: db
-  password: password
+  username: <%= "#{ENV.fetch("DB_USER")}" %>
+  host: <%= "#{ENV.fetch("DB_HOST")}" %>
+  password: <%= "#{ENV.fetch("DB_PASS")}" %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: <%= "#{ENV.fetch("DB_NAME")}_dev" %>
+  database: <%= "#{ENV.fetch("DB_NAME")}" %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -18,4 +18,4 @@ test:
 
 production:
   <<: *default
-  database: <%= "#{ENV.fetch("DB_NAME")}_prod" %>
+  database: <%= "#{ENV.fetch("DB_NAME")}" %>
