@@ -9,8 +9,8 @@ export const MainContent = () => {
   return (
     <Layout.Content>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/thing/:id" component={ThingDetail} />
+        <Route path="/things/:id" component={ThingDetail} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </Layout.Content>
   )

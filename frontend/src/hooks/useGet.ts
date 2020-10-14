@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import Axios from 'axios'
-
-import { getHeaders } from 'utils/auth'
+import { useAppContext } from 'contexts/AppContext'
 
 type Options = {
   subscribe: boolean
@@ -28,6 +27,8 @@ export type Response<T> =
     }
 
 export const useGet = <T>(path: string, options?: Options): Response<T> => {
+  const app = useAppContext()
+
   const [data, setData] = useState<T | null>(null)
   const [error, setError] = useState(false)
 
@@ -41,7 +42,7 @@ export const useGet = <T>(path: string, options?: Options): Response<T> => {
     }
 
     try {
-      const { data } = await Axios.get<T>(`/api/${path}`, getHeaders())
+      const { data } = await Axios.get<T>(`/api/${path}`, app.api.getHeaders())
       setData(data)
     } catch (err) {
       // TODO: if unauthed, clear token, move user to "login expired" page

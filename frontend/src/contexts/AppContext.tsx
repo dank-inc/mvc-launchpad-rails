@@ -25,7 +25,7 @@ export const AppContextProvider = ({ children }: Props) => {
       value={{
         loaded,
         api: new Api(),
-        title: 'MVP MVC Boilerplate by Dank Inc. 🤠',
+        title: process.env.REACT_APP_NAME || 'Set name in .ENV',
       }}
     >
       {children}

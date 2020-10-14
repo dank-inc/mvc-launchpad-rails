@@ -21,8 +21,8 @@ export const Login = () => {
         <Form.Item label="username" name="username" required>
           <Input />
         </Form.Item>
-        <Form.Item label="password" name="username" required>
-          <Input />
+        <Form.Item label="password" name="password" required>
+          <Input type="password" />
         </Form.Item>
         <Button type="primary" htmlType="submit">
           Submit

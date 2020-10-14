@@ -1,26 +1,31 @@
 import Axios, { AxiosInstance } from 'axios'
 import { LoginData } from 'types/Auth'
 import { User } from 'types/User'
-import { getHeaders } from './auth'
+import { getTokenFromLocalStorage } from './auth'
 
 export class Api {
-  token: string
   baseURL: string
   axios: AxiosInstance
 
   constructor() {
     this.axios = Axios
     this.baseURL = `/api`
-    // handle settings etc
+  }
 
-    this.token = 'asdfasdfa' // get from localstorage after auth
+  getHeaders() {
+    return {
+      headers: {
+        Accept: 'application/json',
+        Authorization: getTokenFromLocalStorage(),
+      },
+    }
   }
 
   async get<T>(path: string) {
     // try catch
     const { data } = await this.axios.get<T>(
       `${this.baseURL}/${path}`,
-      getHeaders()
+      this.getHeaders()
     )
     return data
   }
@@ -30,7 +35,7 @@ export class Api {
     const { data } = await this.axios.post<T>(
       `${this.baseURL}/${path}`,
       body,
-      getHeaders()
+      this.getHeaders()
     )
     return data
   }
@@ -47,11 +52,11 @@ export class Api {
   }
 
   // decorate all these create functions with a try catch
-  async createProject(id: string, body: any) {
-    const { data } = await this.axios.post(`projects/${id}`, body)
+  async createProject(body: any) {
+    return await this.axios.post(`projects`, body)
   }
 
-  async createOrganization(id: string, body: any) {
-    const { data } = await this.axios.post(`projects/${id}`, body)
+  async createOrganization(body: any) {
+    return await this.axios.post(`oraganizations`, body)
   }
 }
