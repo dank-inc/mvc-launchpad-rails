@@ -1,2 +1,14 @@
 @import '~antd/dist/antd.css';
 // @import '~antd/dist/antd.dark.css';
+
+.app-header {
+  h1 {
+    color: #fff;
+    margin: auto;
+  }
+
+  .links a {
+    font-weight: 600;
+    margin: auto 1rem;
+  }
+}
