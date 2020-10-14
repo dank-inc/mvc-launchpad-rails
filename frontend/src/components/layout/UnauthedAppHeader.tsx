@@ -1,20 +1,20 @@
-import { Col, Layout, Row, Typography } from 'antd'
-import { useAppContext } from 'contexts/AppContext'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Col, Layout, Row, Typography } from 'antd'
+import { useAppContext } from 'contexts/AppContext'
 
-export const AppHeader = () => {
+export const UnauthedAppHeader = () => {
   const app = useAppContext()
 
   return (
     <Layout.Header className="app-header">
-      <Row justify="space-between" align="middle">
+      <Row align="middle" justify="space-between">
         <Col>
           <Typography.Title>{app.title}</Typography.Title>
         </Col>
         <Col className="nav">
           <Link to="/">Home</Link>
-          <Link to="/things/cool">Cool Thing</Link>
+          <Link to="/login">Login</Link>
         </Col>
       </Row>
     </Layout.Header>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Axios from 'axios'
 
-import { getToken } from 'utils/auth'
+import { getHeaders } from 'utils/auth'
 
 type Options = {
   subscribe: boolean
@@ -41,7 +41,7 @@ export const useGet = <T>(path: string, options?: Options): Response<T> => {
     }
 
     try {
-      const { data } = await Axios.get<T>(`/api/${path}`, getToken())
+      const { data } = await Axios.get<T>(`/api/${path}`, getHeaders())
       setData(data)
     } catch (err) {
       // TODO: if unauthed, clear token, move user to "login expired" page

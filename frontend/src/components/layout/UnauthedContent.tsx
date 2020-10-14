@@ -3,14 +3,14 @@ import { Route, Switch } from 'react-router-dom'
 import { Layout } from 'antd'
 
 import { Home } from 'components/pages/Home'
-import { ThingDetail } from 'components/pages/ThingDetail'
+import { Login } from 'components/pages/Login'
 
-export const MainContent = () => {
+export const UnauthedContent = () => {
   return (
     <Layout.Content>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/thing/:id" component={ThingDetail} />
+        <Route path="/login" component={Login} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </Layout.Content>
   )

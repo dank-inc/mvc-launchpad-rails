@@ -1,27 +1,49 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
+import { User } from 'types/User'
+import {
+  getUserFromLocalStorage,
+  setLocalStorageToken,
+  wipeLocalStorageToken,
+} from 'utils/auth'
+import { useAppContext } from './AppContext'
 
 type Props = { children: React.ReactNode }
-type Context = { user: any }
+type Context = {
+  user: User | null
+  handleLogin: (u: string, p: string) => void
+}
 
 const UserContext = createContext<Context | null>(null)
 
 export const UserContextProvider = ({ children }: Props) => {
-  const [user, setUser] = useState(false)
+  const { api } = useAppContext()
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
-    // get token from localstore
-    // if token
-    // api.getUser(token)
-    // if success, return
+    const authLogin = async (id: string) => {
+      setUser(await api.getUser(id))
+    }
 
-    // sad path
-    // remove token from localstore, redirect to login page
+    const loginData = getUserFromLocalStorage()
+    if (loginData) {
+      authLogin(loginData.id)
+      return
+    }
 
-    setUser(true)
+    wipeLocalStorageToken()
+    setUser(null)
   }, [])
 
+  const handleLogin = async (username: string, password: string) => {
+    const loginData = await api.login(username, password)
+    setLocalStorageToken(loginData)
+    setUser(await api.getUser(loginData.id))
+  }
+
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, handleLogin }}>
+      {children}
+    </UserContext.Provider>
   )
 }
 
