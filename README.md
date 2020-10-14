@@ -49,7 +49,7 @@ NOTE: frontend hot reloading is a pain in the ass in docker so it works _sometim
   - antd
   - Typescript
   - ActionCable library (from dank-inc)
-  - useGet library (from dank-inc)
+  - useGet hook (discount react-query)
 
 ## Misc
 
