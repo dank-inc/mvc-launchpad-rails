@@ -30,7 +30,7 @@ export class Api {
     return data
   }
 
-  async post<T>(path: string, body: Record<string, string | number>) {
+  async post<T>(path: string, body: any) {
     // try catch
     const { data } = await this.axios.post<T>(
       `${this.baseURL}/${path}`,
@@ -52,11 +52,7 @@ export class Api {
   }
 
   // decorate all these create functions with a try catch
-  async createProject(body: any) {
-    return await this.axios.post(`projects`, body)
-  }
-
-  async createOrganization(body: any) {
-    return await this.axios.post(`oraganizations`, body)
+  async createUser(body: User) {
+    return await this.post<User>(`users`, body)
   }
 }
