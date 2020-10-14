@@ -5,6 +5,7 @@ export const Home = () => {
   return (
     <>
       <PageHeader title="I am the home page" subTitle="Located at route '/'" />
+      <p>Change me at 'src/components/pages/Home.tsx'</p>
     </>
   )
 }

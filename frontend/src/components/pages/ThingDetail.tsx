@@ -7,6 +7,7 @@ export const ThingDetail = ({ match }: Props) => {
   return (
     <>
       <PageHeader title={`Details for thing: ${match.params.id}`} />
+      <p>Change me at 'src/components/pages/ThingDetail.tsx'</p>
     </>
   )
 }
