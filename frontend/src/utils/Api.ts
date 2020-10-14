@@ -1,7 +1,11 @@
 import Axios, { AxiosInstance } from 'axios'
+
 import { LoginData } from 'types/Auth'
 import { User } from 'types/User'
-import { getTokenFromLocalStorage } from './auth'
+import { getTokenFromLocalStorage } from 'utils/auth'
+
+// TODO: try-catch Decorators
+// https://fireship.io/lessons/ts-decorators-by-example/#:~:text=%20TypeScript%20Decorators%20by%20Example%20%201%20Class,a%20method%E2%80%99s%20function%2C%20change%20its%20control...%20More%20
 
 export class Api {
   baseURL: string

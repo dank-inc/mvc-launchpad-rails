@@ -4,10 +4,17 @@
 
 boilerplate project for MVPs using MVC
 
-# TODOS
+# TODO LIST
 
-- scaffold users table and controller into boilerplate
-- generate react forms ? some sort of admin panel a-la django
+### Data Model Plan and Exec
+
+- move schema to base directory
+- create script to generate scaffold commands
+- generate react forms & routes (agnostic maybe) / some sort of admin panel a-la django
+
+### Misc
+
+- host live version somewhere
 
 # How To Use
 
@@ -32,6 +39,7 @@ boilerplate project for MVPs using MVC
 3. Become Millionaire!
 
 ## Issues
+
 - hot reloading does not work becasue nginx needs an addtl config
 
 # Stack Details
