@@ -4,6 +4,11 @@
 
 boilerplate project for MVPs using MVC
 
+# TODOS
+
+- scaffold users table and controller into boilerplate
+- generate react forms ? some sort of admin panel a-la django
+
 # How To Use
 
 ## Setup
@@ -17,8 +22,6 @@ boilerplate project for MVPs using MVC
 - run (in container) `rails db:create`
 - run (in container) `rails db:migrate`
 - run (in container) `rails db:seed`
-
-TODO: generate react forms?
 
 - make your frontend
 
