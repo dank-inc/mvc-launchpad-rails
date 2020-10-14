@@ -6,6 +6,12 @@ boilerplate project for MVPs using MVC
 
 # TODO LIST
 
+### now-ish
+
+- nginx: add headers to api proxy
+- nginx: add react hot reload proxy
+- web/nginx: create different route for actioncable
+
 ### Data Model Plan and Exec
 
 - move schema to base directory
