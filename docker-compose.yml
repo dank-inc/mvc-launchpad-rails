@@ -57,11 +57,11 @@ services:
     volumes:
       - el_database:/var/lib/postgresql/data
 
-  pgweb:
-    image: sosedoff/pgweb
-    depends_on:
-      - db
-    ports:
-      - 8081:8081
-    environment:
-      - DATABASE_URL=postgres://${DB_USER}:${DB_PASS}@${DB_USER}:5432/${DB_NAME}?sslmode=disable
+  # pgweb:
+  #   image: sosedoff/pgweb
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 8081:8081
+  #   environment:
+  #     - DATABASE_URL=postgres://${DB_USER}:${DB_PASS}@${DB_USER}:5432/${DB_NAME}?sslmode=disable
