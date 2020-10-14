@@ -29,10 +29,10 @@ boilerplate project for MVPs using MVC
 
 1. run (in root folder) docker-compose down && docker-compose up
 2. go to localhost, see your creation!
-
-NOTE: frontend hot reloading is a pain in the ass in docker so it works _sometimes_.
-
 3. Become Millionaire!
+
+## Issues
+- hot reloading does not work becasue nginx needs an addtl config
 
 # Stack Details
 
