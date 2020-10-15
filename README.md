@@ -2,7 +2,7 @@
 
 ## Docker - Postgresql 12 - Rails 6 - Typescript React - ActionCable - NGINX
 
-boilerplate project for MVPs using MVC
+boilerplate project for MVC MVPs
 
 # TODO LIST
 
@@ -14,9 +14,10 @@ boilerplate project for MVPs using MVC
 
 ### Data Model Plan and Exec
 
+- generate react forms & routes (agnostic maybe) / some sort of admin panel a-la django
+- add administrage gem in favor above todo - would be cool to roll it up in he frontend, but that is a good first iteration
 - move schema to base directory
 - create script to generate scaffold commands
-- generate react forms & routes (agnostic maybe) / some sort of admin panel a-la django
 
 ### Misc
 
