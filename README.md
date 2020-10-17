@@ -8,6 +8,8 @@ boilerplate project for MVC MVPs
 
 ### now-ish
 
+- switch moment to https://www.npmjs.com/package/luxon
+
 - nginx: add headers to api proxy
 - nginx: add react hot reload proxy
 - web/nginx: create different route for actioncable
