@@ -8,7 +8,7 @@ boilerplate project for MVC MVPs
 
 ### now-ish
 
-- switch moment to https://www.npmjs.com/package/luxon
+- switch moment to https://www.npmjs.com/package/luxon or date-fns
 
 - nginx: add headers to api proxy
 - nginx: add react hot reload proxy
